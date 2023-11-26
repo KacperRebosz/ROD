@@ -10,6 +10,8 @@ import RentingPage from "./pages/Renting.jsx";
 import GalleryPage from "./pages/Gallery.jsx";
 import RootLayout from "./pages/Root.jsx";
 import ErrorPage from "./pages/Error.jsx";
+import PageFooter from "./components/Footer.jsx";
+import NewsPageModal from "./components/NewsPageModal.jsx";
 // const routeDefinitions = createRoutesFromElements(
 //   <Route>
 //     <Route path="/" element={<HomePage />} />
@@ -41,13 +43,12 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-      <div
-        id="main"
-        className="col-start-2 col-span-3 h-screen bg-violet-50/60 shadow-2xl"
-      >
+      <div id="main" className="">
+        {/* <div className="h-40"></div> */}
         <RouterProvider router={router} />
-        {/* <h1 className="text-3xl font-bold underline">Hello World!</h1> */}
+        {/* <PageFooter /> */}
       </div>
+      {/* <NewsPageModal /> */}
     </>
   );
 }

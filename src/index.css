@@ -1,22 +1,28 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Space Grotesk", sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgb(39, 39, 39);
   /* background-image: url("./photos/top-view-flowers-leaves.jpg"); */
-  background-image: url("./photos/tlo41.jpg");
+  /* background-image: url("./photos/tlostrona.png"); */
+
+  /* background: url("./photos/tlostrona.png") no-repeat center center fixed; */
+
   background-size: 100%;
   /* background-repeat: repeat(); */
 
-  background-color: #cdc7f1;
+  /* background-color: #cdc7f1; */
 
-  /* background-color: #fff; */
+  background-color: #fff;
   /* opacity: 85%; */
 
   font-synthesis: none;
@@ -59,7 +65,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #b19191;
   cursor: pointer;
   transition: border-color 0.25s;
 }

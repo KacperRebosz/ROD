@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MenuButton from "./MenuButton.jsx";
 import { MENU_CONTENT } from "../data/menus.js";
-import DocumentPage from "../pages/Documents.jsx";
+// import DocumentPage from "../pages/Documents.jsx";
 import { NavLink, Link } from "react-router-dom";
 import classes from "./Menu.module.css";
 
@@ -15,7 +15,7 @@ const ARRAY_PAGES = [
     href: "/Expenses",
   },
   {
-    label: "O nas",
+    label: "Aktualności",
     href: "/AboutUs",
   },
   {
@@ -41,7 +41,7 @@ const ARRAY_PAGES = [
 ];
 
 export default function Menu() {
-  const [selectedMenu, setSelectedMenu] = useState("");
+  const [selectedMenu, setSelectedMenu] = useState("Strona główna");
 
   function handleSelect(selectedMenuButton) {
     setSelectedMenu(selectedMenuButton);
@@ -50,79 +50,18 @@ export default function Menu() {
 
   let currentPageContent = <p>MAIN PAGE !</p>;
 
-  if (selectedMenu) {
-    currentPageContent = (
-      <div id="current-pageContent">
-        <h3>{MENU_CONTENT[selectedMenu].title}</h3>
-        <p>{MENU_CONTENT[selectedMenu].description}</p>
-      </div>
-    );
-  }
-
-  //   return (
-  //     <>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "MainPage"}
-  //         onClick={() => handleSelect("MainPage")}
-  //       >
-  //         <Link to="/">Strona glowna</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "Expenses"}
-  //         onClick={() => handleSelect("Expenses")}
-  //       >
-  //         <Link to="/Expenses">Oplaty</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "AboutUs"}
-  //         onClick={() => handleSelect("AboutUs")}
-  //       >
-  //         <Link to="/AboutUs">O nas</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "Gallery"}
-  //         onClick={() => handleSelect("Gallery")}
-  //       >
-  //         <Link to="/Gallery">Galeria</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "Regulations"}
-  //         onClick={() => handleSelect("Regulations")}
-  //       >
-  //         <Link to="/Regulations">Przepisy prawne</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "Documents"}
-  //         onClick={() => handleSelect("Documents")}
-  //       >
-  //         <Link to="/Documents">Dokumenty</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "Renting"}
-  //         onClick={() => handleSelect("Renting")}
-  //       >
-  //         <Link to="/Renting">Wynajem sali</Link>
-  //       </MenuButton>
-  //       <MenuButton
-  //         isSelected={selectedMenu === "Contact"}
-  //         onClick={() => handleSelect("Contact")}
-  //       >
-  //         <Link to="/Contact">Kontakt</Link>
-  //       </MenuButton>
-  //       {currentPageContent}
-  //     </>
+  // if (selectedMenu) {
+  //   currentPageContent = (
+  //     <div id="current-pageContent">
+  //       <h3>{MENU_CONTENT[selectedMenu].title}</h3>
+  //       <p>{MENU_CONTENT[selectedMenu].description}</p>
+  //     </div>
   //   );
   // }
 
   return (
     <>
-      <div
-        id="logo"
-        className="font-bold text-center items-center justify-center m-12 text-fuchsia-900"
-      >
-        <h1>Rodzinny ogród działkowy magnolia kielce</h1>
-      </div>
-      <header className="bg-white shadow-inner justify-center">
+      <header className="shadow-inner justify-center pt-2">
         <nav>
           <ul className={classes.list}>
             {ARRAY_PAGES.map((option) => (
@@ -132,6 +71,9 @@ export default function Menu() {
                   className={({ isActive }) =>
                     isActive ? classes.active : undefined
                   }
+                  onClick={() => {
+                    handleSelect(option.label);
+                  }}
                 >
                   {option.label}
                 </NavLink>
@@ -140,6 +82,15 @@ export default function Menu() {
           </ul>
         </nav>
       </header>
+      <div
+        id="logo"
+        className="font-bold text-center items-center justify-center p-12  "
+      >
+        <h1 className="text-[#054b28] ml-20 mt-10">ROD MAGNOLIA</h1>
+      </div>
+      <div className="text-center ml-[3vw] mt-[49vh] text-[#054b28] text-[20px]">
+        {selectedMenu}
+      </div>
     </>
   );
 }

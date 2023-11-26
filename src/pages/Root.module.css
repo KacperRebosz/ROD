@@ -1,4 +1,8 @@
-.content {
+/* .content {
   margin: 2rem auto;
   text-align: center;
+} */
+#does {
+  background-image: url("../photos/tlostrona.png");
+  background-size: 100%;
 }
