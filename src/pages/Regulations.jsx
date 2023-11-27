@@ -1,3 +1,9 @@
+import AnimatedPage from "../components/AnimatedPage";
+
 export default function RegulationsPage() {
-  return <h1>Regulations Page</h1>;
+  return (
+    <AnimatedPage>
+      <h1>Regulations Page</h1>
+    </AnimatedPage>
+  );
 }

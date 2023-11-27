@@ -3,6 +3,7 @@ import axios from "axios";
 import NewsSection from "../components/NewsSection";
 import moment from "moment/min/moment-with-locales";
 import PageFooter from "../components/Footer";
+import AnimatedPage from "../components/AnimatedPage";
 
 export default function AboutUsPage() {
   const [news, setNews] = useState([]);
@@ -47,24 +48,32 @@ export default function AboutUsPage() {
 
   return (
     <>
-      <div className="h-full min-h-screen ">
-        <h1 className="text-green-500 text-center font-bold ">Aktualności</h1>
-        <div className="h-full grid grid-cols-3 gap-10">
-          {sortedNewsArray.map((news) => (
-            <NewsSection
-              key={news.id}
-              title={news.attributes.title}
-              date={dateConversion(news.attributes.date)}
-              shortDescription={news.attributes.shortDescription}
-              photo={
-                "http://localhost:1337" +
-                news.attributes.cover.data.attributes.formats.small.url
-              }
-            />
-          ))}
+      <AnimatedPage>
+        <div className="h-full min-h-screen ">
+          <h1 className="ml-20 p-16 pt-8 text-center text-4xl font-bold text-[#054b28] ">
+            Aktualności
+          </h1>
+          <div className="grid h-full grid-cols-3 gap-10">
+            {sortedNewsArray.map((news) => (
+              <NewsSection
+                key={news.id}
+                title={news.attributes.title}
+                date={dateConversion(news.attributes.date)}
+                shortDescription={news.attributes.shortDescription}
+                description={news.attributes.description}
+                smallphoto={
+                  "http://localhost:1337" +
+                  news.attributes.cover.data.attributes.formats.thumbnail.url
+                }
+                photo={
+                  "http://localhost:1337" +
+                  news.attributes.cover.data.attributes.formats.small.url
+                }
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      {/* <PageFooter /> */}
+      </AnimatedPage>
     </>
   );
 }

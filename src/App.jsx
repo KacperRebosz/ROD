@@ -12,6 +12,7 @@ import RootLayout from "./pages/Root.jsx";
 import ErrorPage from "./pages/Error.jsx";
 import PageFooter from "./components/Footer.jsx";
 import NewsPageModal from "./components/NewsPageModal.jsx";
+import { motion } from "framer-motion";
 // const routeDefinitions = createRoutesFromElements(
 //   <Route>
 //     <Route path="/" element={<HomePage />} />
@@ -44,11 +45,8 @@ function App() {
   return (
     <>
       <div id="main" className="">
-        {/* <div className="h-40"></div> */}
         <RouterProvider router={router} />
-        {/* <PageFooter /> */}
       </div>
-      {/* <NewsPageModal /> */}
     </>
   );
 }

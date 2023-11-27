@@ -4,6 +4,12 @@ import { MENU_CONTENT } from "../data/menus.js";
 // import DocumentPage from "../pages/Documents.jsx";
 import { NavLink, Link } from "react-router-dom";
 import classes from "./Menu.module.css";
+import AnimatedPage from "./AnimatedPage.jsx";
+import { motion } from "framer-motion";
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
+
+const klasy = `
+  relative after:absolute after:w-[0%] after:content-["."] after:text-transparent after:h-px after:m-auto after:bottom-0 after:inset-x-0 hover:after:w-full `;
 
 const ARRAY_PAGES = [
   {
@@ -61,7 +67,7 @@ export default function Menu() {
 
   return (
     <>
-      <header className="shadow-inner justify-center pt-2">
+      <header className="justify-center pt-2 shadow-inner">
         <nav>
           <ul className={classes.list}>
             {ARRAY_PAGES.map((option) => (
@@ -69,7 +75,9 @@ export default function Menu() {
                 <NavLink
                   to={option.href}
                   className={({ isActive }) =>
-                    isActive ? classes.active : undefined
+                    isActive
+                      ? "!transition-all !delay-300 !text-black !border-b-2 !border-black"
+                      : undefined
                   }
                   onClick={() => {
                     handleSelect(option.label);
@@ -84,12 +92,19 @@ export default function Menu() {
       </header>
       <div
         id="logo"
-        className="font-bold text-center items-center justify-center p-12  "
+        className="items-center justify-center p-12 text-center font-bold  "
       >
-        <h1 className="text-[#054b28] ml-20 mt-10">ROD MAGNOLIA</h1>
+        <h1 className="ml-20 mt-10 text-[#054b28]">ROD MAGNOLIA</h1>
       </div>
-      <div className="text-center ml-[3vw] mt-[49vh] text-[#054b28] text-[20px]">
-        {selectedMenu}
+      <div className="ml-[3vw] mt-[52vh] text-center text-[32px] text-[#054b28]">
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -100 }}
+          key={selectedMenu}
+        >
+          {selectedMenu}
+        </motion.div>
       </div>
     </>
   );

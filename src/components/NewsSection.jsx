@@ -13,17 +13,17 @@ const NewsSection = ({
   return (
     //31 rem
     // bg-violet-50/80
-    <div className="w-full object-cover h-[34rem] shadow-2xl rounded-b-xl drop-shadow-2xl">
+    <div className="h-[34rem] w-full rounded-b-xl object-cover shadow-2xl drop-shadow-2xl">
       <img
         src={photo}
         alt="Image"
-        className="object-cover h-3/5 w-full rounded-t-xl"
+        className="h-3/5 w-full rounded-t-xl object-cover"
       />
-      <div className="flex flex-col flex-wrap items-left h-2/5 gap-y-4">
-        <h2 className="text-xl font-bold ml-4 mt-4">{title}</h2>
+      <div className="items-left flex h-2/5 flex-col flex-wrap gap-y-4">
+        <h2 className="ml-4 mt-4 text-xl font-bold">{title}</h2>
         <p className="-mt-4 ml-4 text-sm text-green-500">{date}</p>
-        <p className="text-base ml-4 mt-3">{shortDescription}</p>
-        <div className="flex justify-center items-center mt-auto">
+        <p className="ml-4 mt-3 text-base">{shortDescription}</p>
+        <div className="mt-auto flex items-center justify-center">
           <NewsSectionButton
             // id={id}
             newsContent={{
@@ -35,7 +35,7 @@ const NewsSection = ({
               photo: { photo },
               smallphoto: { smallphoto },
             }}
-            className="bg-green-600 w-36 h-12 rounded-md text-white font-bold flex justify-center items-center mb-4"
+            className=" mb-4 flex h-12 w-36 items-center justify-center rounded-md bg-[#054b28] font-bold text-white transition duration-500 ease-in-out hover:bg-green-500"
           />
         </div>
       </div>

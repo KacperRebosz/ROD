@@ -1,4 +1,3 @@
-import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import ModalContent from "./ModalContent.jsx";
 
@@ -14,12 +13,23 @@ export default function NewsPageModal({
       {activePopup &&
         createPortal(
           <ModalContent closeModal={() => setActivePopup(false)}>
-            <div>
-              <h2>{newsContent.title.title}</h2>
-              <p>{newsContent.date.date}</p>
-              <p>{newsContent.shortDescription.shortDescription}</p>
-              <p>{newsContent.description.description}</p>
-              <img src={newsContent.smallphoto.smallphoto} />
+            <div className="relative">
+              <p className="left-0 top-0 absolute p-3 text-green-500">
+                {newsContent.date.date}
+              </p>
+              <h2 className="pl-8 pt-16 text-[3rem]">
+                {newsContent.title.title}
+              </h2>
+              <p className="pl-8 pt-4">
+                {newsContent.shortDescription.shortDescription}
+              </p>
+              <p className="pl-8 pr-8 mt-16 pb-8">
+                {newsContent.description.description}
+              </p>
+              <img
+                className="top-0 right-0 absolute p-3 "
+                src={newsContent.smallphoto.smallphoto}
+              />
             </div>
           </ModalContent>,
           document.body

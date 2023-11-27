@@ -16,7 +16,7 @@ export default function NewsSectionButton({
 
   return (
     <>
-      <div
+      <button
         className={isSelected ? "active" : undefined}
         {...props}
         id={id}
@@ -28,7 +28,7 @@ export default function NewsSectionButton({
           activePopup={activePopup}
           setActivePopup={setActivePopup}
         />
-      </div>
+      </button>
     </>
   );
 }
