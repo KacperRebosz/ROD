@@ -18,7 +18,7 @@ function ScrollToAnchor() {
           .getElementById(lastHash.current)
           ?.scrollIntoView({ behavior: "smooth", block: "start" });
         lastHash.current = "";
-      }, 100);
+      }, 500);
     }
   }, [location]);
 

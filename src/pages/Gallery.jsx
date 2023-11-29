@@ -7,9 +7,9 @@ import AnimatedPage from "../components/AnimatedPage";
 
 export default function GalleryPage() {
   const [sections, setSections] = useState([]);
-  // const [loading, setLoading] = useState(true);
 
-  const apiURL = "http://localhost:1337/api/each-gallery-sections?populate=*";
+  const apiURL =
+    "https://mindful-cabbage-f2676bb676.strapiapp.com/api/each-gallery-sections?populate=*";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +41,8 @@ export default function GalleryPage() {
             description={section.attributes.Description}
             images={section.attributes.Images.data.map(
               (image) =>
-                "http://localhost:1337" + image.attributes.formats.small.url
+                "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
+                image.attributes.formats.small.url
             )}
           />
         ))}

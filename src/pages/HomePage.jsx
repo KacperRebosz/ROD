@@ -19,7 +19,9 @@ export default function HomePage() {
       try {
         const response = await axios.get(apiURL);
         console.log(response.data);
+        // const result = await response.json();
         setNews(response.data.data);
+        // setNews(result);
       } catch (error) {
         console.error("Error while fetching data: ", error);
       }

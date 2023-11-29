@@ -25,19 +25,20 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    id: "rootPage",
     errorElement: <ErrorPage />,
     children: [
-      { path: "/", element: <HomePage /> },
+      { path: "/", id: "homePage", element: <HomePage /> },
       {
         path: "/Contact",
         element: <ContactPage />,
       },
       { path: "/Documents", element: <DocumentsPage /> },
-      { path: "/AboutUs", element: <AboutUsPage /> },
+      { path: "/AboutUs", id: "aboutUsPage", element: <AboutUsPage /> },
       { path: "/Expenses", element: <ExpensesPage /> },
       { path: "/Regulations", element: <RegulationsPage /> },
       { path: "/Renting", element: <RentingPage /> },
-      { path: "/Gallery", element: <GalleryPage /> },
+      { path: "/Gallery", id: "galleryPage", element: <GalleryPage /> },
     ],
   },
 ]);
