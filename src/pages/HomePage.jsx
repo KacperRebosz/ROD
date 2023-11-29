@@ -9,7 +9,10 @@ import AnimatedPage from "../components/AnimatedPage";
 export default function HomePage() {
   const [news, setNews] = useState([]);
 
-  const apiURL = "http://localhost:1337/api/update-sections?populate=*";
+  // const apiURL = "http://localhost:1337/api/update-sections?populate=*";
+
+  const apiURL =
+    "https://mindful-cabbage-f2676bb676.strapiapp.com/api/update-sections?populate=*";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -71,11 +74,11 @@ export default function HomePage() {
                 shortDescription={news.attributes.shortDescription}
                 description={news.attributes.description}
                 smallphoto={
-                  "http://localhost:1337" +
+                  "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
                   news.attributes.cover.data.attributes.formats.thumbnail.url
                 }
                 photo={
-                  "http://localhost:1337" +
+                  "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
                   news.attributes.cover.data.attributes.formats.small.url
                 }
               />
