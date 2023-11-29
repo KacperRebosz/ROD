@@ -6,8 +6,11 @@ export default function ContactPage() {
   return (
     <>
       <AnimatedPage>
-        <div id="ContactPageID" className="h-full">
-          <p className="ml-20 p-16 pt-8 text-center text-5xl font-bold text-[#054b28]">
+        <div
+          id="kontakt"
+          className="mx-2 sm:mx-6 pb-4 sm:pb-6 lg:pt-8 lg:pb-2 h-full xl:mx-12 3xl:mx-16"
+        >
+          <p className="text-3xl pt-4 p-2 sm:pt-6 lg:pb-8 2xl:p-16 2xl:pt-8 text-center 2xl:text-5xl font-bold text-[#054b28]">
             Kontakt
           </p>
           <section>

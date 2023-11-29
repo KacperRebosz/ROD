@@ -30,8 +30,8 @@ export default function GalleryPage() {
 
   return (
     <AnimatedPage>
-      <div className="h-full ">
-        <h1 className="ml-20 p-16 pt-8 text-center text-4xl font-bold text-[#054b28] ">
+      <div id="galeria" className="">
+        <h1 className="pt-4 text-3xl sm:pt-6 lg:pt-8 lg:pb-2   3xl:pt-8 text-center 3xl:text-4xl font-bold text-[#054b28] ">
           Galeria
         </h1>
         {sortedSectionsArray.map((section) => (

@@ -56,12 +56,12 @@ export default function HomePage() {
   return (
     <>
       <AnimatedPage>
-        <div id="mainContentOfPage" className="">
-          <p className="ml-20 p-16 pt-8 text-center text-4xl font-bold text-[#054b28]">
+        <div id="strona_główna" className="">
+          <p className="text-2xl pt-4 p-2 sm:text-3xl sm:pt-6 sm:pb-0 lg:pt-8 lg:pb-2 3xl:pt-8 text-center 3xl:text-4xl font-bold text-[#054b28]">
             Najnowsze Ogłoszenia
           </p>
 
-          <div className="grid h-full grid-cols-3 gap-10">
+          <div className="mx-2 sm:mx-12 md:grid md:grid-cols-2 md:gap-4 md:mx-4 lg:mx-12 xl:grid xl:grid-cols-3 xl:gap-4 xl:mx-4 2xl:gap-8 2xl:mx-24 3xl:grid h-full 3xl:grid-cols-3 3xl:gap-10">
             {newestNews.map((news) => (
               <NewsSection
                 key={news.id}
@@ -82,16 +82,16 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-        <p className="p-5 text-right text-2xl font-bold text-[#054b28] ">
+        <p className="text-center text-xl pb-4 sm:-mt-4 md:mt-4 xl:text-right xl:px-6 2xl:mx-24 3xl:text-right 3xl:text-2xl font-bold text-[#054b28] ">
           <NavLink
-            to="/AboutUs"
+            to="/AboutUs#ogloszenia"
             className="text-[#054b28] hover:text-black hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-[2px] before:origin-right before:transition-transform before:duration-800 before:scale-x-0 before:bg-black before:absolute before:left-0 before:bottom-[-2px]"
           >
             Pokaż wszystkie ogłoszenia
           </NavLink>
         </p>
         <section className=" h-full w-full">
-          <p className="p-5 text-center text-4xl font-bold text-[#054b28]">
+          <p className="pt-6 p-2 sm:pt-8 sm:p-6 md:pt-10 md:p-8 text-center text-3xl 3xl:text-4xl font-bold text-[#054b28]">
             Lokalizacja
           </p>
           <iframe
