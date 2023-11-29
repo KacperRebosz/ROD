@@ -27,7 +27,7 @@ export default function NewsPageModal({
                 {newsContent.description.description}
               </p>
               <img
-                className="p-1 w-32 sm:p-3 sm:w-48 lg:p-5 lg:w-52 xl:w-60 top-0 right-0 3xl:pr-8 3xl:p-6 3xl:w-[22rem] absolute "
+                className="p-1 w-32 sm:p-3 sm:w-48 lg:p-5 lg:w-52 xl:w-60 top-0 right-0 3xl:pr-8 3xl:p-6 3xl:w-[21rem] absolute  "
                 src={newsContent.smallphoto.smallphoto}
               />
             </div>
