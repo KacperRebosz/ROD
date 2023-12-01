@@ -1,12 +1,29 @@
 import { createPortal } from "react-dom";
 import ModalContent from "./ModalContent.jsx";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function NewsPageModal({
   activePopup,
   setActivePopup,
   newsContent,
 }) {
-  // const [activePopup, setActivePopup] = useState(false);
+  // const navigate = useNavigate();
+  // console.log(navigate);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setActivePopup(null);
+      }
+    };
+    // Add event listener when the component mounts
+    document.addEventListener("keydown", handleKeyDown);
+    // Remove event listener when the component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setActivePopup]);
 
   return (
     <>

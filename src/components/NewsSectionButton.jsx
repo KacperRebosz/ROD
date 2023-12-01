@@ -6,10 +6,10 @@ export default function NewsSectionButton({
   id,
   isSelected,
   newsContent,
+  activePopup,
+  setActivePopup,
   ...props
 }) {
-  const [activePopup, setActivePopup] = useState(false);
-
   const handleDivClick = () => {
     setActivePopup(!activePopup);
   };

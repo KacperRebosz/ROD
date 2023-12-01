@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useMotionValueEvent, color } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  color,
+  animate,
+  stagger,
+} from "framer-motion";
 import { NavLink, Link } from "react-router-dom";
 
 const ARRAY_PAGES = [
@@ -38,6 +45,46 @@ const ARRAY_PAGES = [
 ];
 
 export default function NavigationMobile({ isOpen }) {
+  // const li_item = {
+  //   open: {
+  //     transition: {
+  //       staggerChildren: 0.3,
+  //     },
+  //   },
+  //   closed: {
+  //     transition: {
+  //       staggerChildren: 0.15,
+  //       staggerDirection: -1,
+  //     },
+  //   },
+  // };
+  // const sidebar = {
+  //   open: {
+  //     transition: {
+  //       type: "spring",
+  //       stiffness: 20,
+  //     },
+  //   },
+  //   closed: {
+  //     transition: {
+  //       delay: 0.4,
+  //       type: "spring",
+  //       stiffness: 400,
+  //       damping: 40,
+  //     },
+  //   },
+  // };
+  // const itemVariants = {
+  //   open: {
+  //     y: 0,
+  //     opacity: 1,
+  //   },
+  //   closed: {
+  //     y: 50,
+  //     opacity: 0,
+  //   },
+  // };
+
   function handleSelect(selectedMenuButton) {
     setSelectedMenu(selectedMenuButton);
     console.log(selectedMenuButton);
@@ -46,25 +93,42 @@ export default function NavigationMobile({ isOpen }) {
     return (
       <motion.nav
         className="fixed inset-0 m-auto bg-white"
+        // initial="hidden"
+        // animate="visible"
+        // variants={sidebar}
         // onClick={(This)=>this.}
       >
         <motion.div>
           <motion.div className="w-full ">
-            <ul className="flex h-screen flex-col items-center justify-center gap-4">
+            <motion.ul
+              // initial="hidden"
+              // animate="visible"
+              // variants={list_item}
+              // transition={{ duration: 0.5 }}
+              className="flex h-screen flex-col items-center justify-center gap-4"
+            >
               {ARRAY_PAGES.map((option) => (
-                <li key={option.label}>
+                <motion.li
+                  // initial="hidden"
+                  // animate="visible"
+                  // variants={li_item}
+                  // transition={{ duration: 0.5 }}
+                  className="text-3xl"
+                  key={option.label}
+                >
                   <NavLink
                     to={option.href}
                     className={({ isActive }) => (isActive ? "" : undefined)}
+                    // variants={itemVariants}
                     onClick={() => {
                       handleSelect(option.label);
                     }}
                   >
                     {option.label}
                   </NavLink>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
           </motion.div>
         </motion.div>
       </motion.nav>

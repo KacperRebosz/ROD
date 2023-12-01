@@ -42,7 +42,7 @@ export default function GalleryPage() {
             images={section.attributes.Images.data.map(
               (image) =>
                 "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
-                image.attributes.formats.small.url
+                image.attributes.url
             )}
           />
         ))}

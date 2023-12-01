@@ -54,6 +54,8 @@ export const Navigation = () => {
 
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
+  // const [open, setOpen] = useState(false);
+
   //   const toggleHamburger = () => {
   //     setHamburgerOpen(!hamburgerOpen);
   //   };
@@ -105,7 +107,10 @@ export const Navigation = () => {
   return (
     <>
       <MediaQuery maxWidth={1023}>
-        <div className="fixed z-[6] flex w-full h-24 items-center justify-center bg-white/80">
+        <motion.div
+          className="fixed z-[6] flex w-full h-24 items-center justify-center bg-white/80"
+          // animate={hamburgerOpen ? "open" : "closed"}
+        >
           <h2 className="fixed mr-4 mt-[0.3rem] text-3xl text-[#054b28]">
             <p className="ml-10">ROD</p>
             <p>MAGNOLIA</p>
@@ -117,7 +122,7 @@ export const Navigation = () => {
             onClick={() => setHamburgerOpen((prev) => !prev)}
           />
           <NavigationMobile isOpen={hamburgerOpen} />
-        </div>
+        </motion.div>
       </MediaQuery>
       <MediaQuery minWidth={1024}>
         <motion.nav
