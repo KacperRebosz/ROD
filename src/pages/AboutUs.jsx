@@ -47,6 +47,14 @@ export default function AboutUsPage() {
     return finalDate;
   }
 
+  function makeShortDescription(input) {
+    if (input.length > 40) {
+      return input.slice(0, 40) + "...";
+    } else {
+      return input + "...";
+    }
+  }
+
   return (
     <>
       <AnimatedPage>
@@ -60,8 +68,10 @@ export default function AboutUsPage() {
                 key={news.id}
                 title={news.attributes.title}
                 date={dateConversion(news.attributes.date)}
-                shortDescription={news.attributes.shortDescription}
                 description={news.attributes.description}
+                shortDescription={makeShortDescription(
+                  news.attributes.description
+                )}
                 smallphoto={
                   "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
                   news.attributes.cover.data.attributes.formats.thumbnail.url
