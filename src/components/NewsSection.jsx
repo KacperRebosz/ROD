@@ -31,7 +31,7 @@ const NewsSection = ({
         onClick={handleDivClick}
       />
       <div className="items-left flex h-2/5 flex-col flex-wrap gap-y-4 md:gap-y-2">
-        <h2 className="ml-2 3xl:ml-4 mt-4 md:mt-1 lg:mt-3 lg:ml-4 text-xl font-bold">
+        <h2 className="ml-2 3xl:ml-4 mt-4 md:mt-1 lg:mt-3 lg:ml-4 text-xl font-bold capitalize">
           {title}
         </h2>
         <p className="-mt-4 ml-2 md:-mt-3 3xl:ml-4 lg:ml-4 text-xs text-green-500">

@@ -37,6 +37,11 @@ export default function NewsPageModal({
               <h2 className="pl-1 pt-10 text-2xl sm:px-3 sm:pt-14 lg:px-5 xl:px-7 3xl:pl-8 3xl:pt-24 3xl:text-[3rem] capitalize ">
                 {newsContent.title.title}
               </h2>
+              <img
+                src="/public/close40.svg"
+                className="absolute right-0 top-0"
+                onClick={() => setActivePopup(false)}
+              />
               {/* <p className="pl-1 pt-3 sm:px-3 lg:px-5 xl:px-7 3xl:pl-8 3xl:pt-4">
                 {newsContent.shortDescription.shortDescription}
               </p> */}
