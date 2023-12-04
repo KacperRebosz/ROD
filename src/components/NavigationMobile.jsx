@@ -92,7 +92,7 @@ export default function NavigationMobile({ isOpen }) {
   if (isOpen === true) {
     return (
       <motion.nav
-        className="fixed inset-0 m-auto bg-white"
+        className="fixed inset-0 m-auto bg-white overflow-auto"
         // initial="hidden"
         // animate="visible"
         // variants={sidebar}
@@ -105,7 +105,7 @@ export default function NavigationMobile({ isOpen }) {
               // animate="visible"
               // variants={list_item}
               // transition={{ duration: 0.5 }}
-              className="flex h-screen flex-col items-center justify-center gap-4"
+              className="flex h-screen flex-col items-center justify-center gap-2 "
             >
               {ARRAY_PAGES.map((option) => (
                 <motion.li
@@ -113,7 +113,7 @@ export default function NavigationMobile({ isOpen }) {
                   // animate="visible"
                   // variants={li_item}
                   // transition={{ duration: 0.5 }}
-                  className="text-3xl"
+                  className="text-2xl "
                   key={option.label}
                 >
                   <NavLink
