@@ -38,7 +38,7 @@ export default function NewsPageModal({
                 {newsContent.title.title}
               </h2>
               <img
-                src="/public/close40.svg"
+                src="/close40.svg"
                 className="absolute right-0 top-0"
                 onClick={() => setActivePopup(false)}
               />
