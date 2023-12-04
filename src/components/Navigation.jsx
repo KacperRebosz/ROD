@@ -111,10 +111,14 @@ export const Navigation = () => {
           className="fixed z-[6] flex w-full h-24 items-center justify-center bg-white/80"
           // animate={hamburgerOpen ? "open" : "closed"}
         >
-          <h2 className="fixed mr-4 mt-[0.3rem] text-3xl text-[#054b28]">
-            <p className="ml-10">ROD</p>
-            <p>MAGNOLIA</p>
-          </h2>
+          <motion.nav className="fixed mr-4 mt-[0.3rem] text-3xl text-[#054b28]">
+            {/* <p className="ml-10">ROD</p>
+            <p>MAGNOLIA</p> */}
+            <NavLink to="/" end reloadDocument className=" text-deco">
+              <p className="ml-10">ROD</p>
+              <p>MAGNOLIA</p>
+            </NavLink>
+          </motion.nav>
           <img
             className="fixed top-8 right-8 cursor-pointer z-[9]"
             src="/menu_40.svg"

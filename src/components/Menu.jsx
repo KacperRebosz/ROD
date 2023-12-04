@@ -2,9 +2,6 @@ import { useState } from "react";
 import AnimatedPage from "./AnimatedPage.jsx";
 import Navigation from "./Navigation.jsx";
 
-const klasy = `
-  relative after:absolute after:w-[0%] after:content-["."] after:text-transparent after:h-px after:m-auto after:bottom-0 after:inset-x-0 hover:after:w-full `;
-
 export default function Menu() {
   // if (selectedMenu) {
   //   currentPageContent = (

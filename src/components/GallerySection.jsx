@@ -23,7 +23,7 @@ const GallerySection = ({ title, description, images }) => {
             key={index}
             src={image}
             alt={`Image ${index + 1}`}
-            className="md:rounded-xl h-[26rem] overflow-hidden object-cover rounded cursor-pointer"
+            className="md:rounded-xl w-full my-2 md:my-0 md:h-[26rem] overflow-hidden object-cover rounded cursor-pointer"
             onClick={() => handleClick(index)}
           />
         ))}
