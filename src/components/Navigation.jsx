@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import classes from "./Menu.module.css";
 import { NavLink, Link } from "react-router-dom";
 import { motion, useScroll, useMotionValueEvent, color } from "framer-motion";
-import { useTransform } from "framer-motion";
 import MediaQuery from "react-responsive";
 import NavigationMobile from "./NavigationMobile";
-// import UseCheckMobileScreen from "../modules/CheckMobileScreen";
 
 const ARRAY_PAGES = [
   {
@@ -46,19 +44,7 @@ let currentPageContent = <p>MAIN PAGE !</p>;
 export const Navigation = () => {
   const [selectedMenu, setSelectedMenu] = useState("Strona główna");
 
-  // const [mobileMenu, setMobileMenu] = useState(false);
-
-  // const toggleMobileMenu = () => {
-  //   setMobileMenu(!mobileMenu);
-  // };
-
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
-
-  // const [open, setOpen] = useState(false);
-
-  //   const toggleHamburger = () => {
-  //     setHamburgerOpen(!hamburgerOpen);
-  //   };
 
   function handleSelect(selectedMenuButton) {
     setSelectedMenu(selectedMenuButton);
@@ -102,18 +88,11 @@ export const Navigation = () => {
 
     return width;
   };
-  // const setOpacity = useTransform(scrollY, [0, 500], [0, 1]);
-  // if (width >= 1024) {
   return (
     <>
       <MediaQuery maxWidth={1023}>
-        <motion.div
-          className="fixed z-[6] flex w-full h-24 items-center justify-center bg-white/80"
-          // animate={hamburgerOpen ? "open" : "closed"}
-        >
+        <motion.div className="fixed z-[6] flex w-full h-24 items-center justify-center bg-white/80">
           <motion.nav className="fixed mr-4 mt-[0.3rem] text-3xl text-[#054b28]">
-            {/* <p className="ml-10">ROD</p>
-            <p>MAGNOLIA</p> */}
             <NavLink to="/" end reloadDocument className=" text-deco">
               <p className="ml-10">ROD</p>
               <p>MAGNOLIA</p>
@@ -133,11 +112,7 @@ export const Navigation = () => {
           variants={variants}
           animate={hidden ? "hidden" : "visible"}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          // style={{
-          //   setOpacity: setOpacity,
-          // }}
           className="justify-center shadow-inner z-[2] fixed w-full "
-          //   className="justify-center pt-2 shadow-inner z-[2] fixed inset-x-20"
         >
           <motion.div className="w-full bg-white/20" ref={containerRef}>
             <ul className={classes.list}>

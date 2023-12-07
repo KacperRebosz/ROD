@@ -1,5 +1,4 @@
 import NewsPageModal from "./NewsPageModal";
-import { useState } from "react";
 import React from "react";
 
 export default function NewsSectionButton({

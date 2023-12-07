@@ -9,8 +9,6 @@ import AnimatedPage from "../components/AnimatedPage";
 export default function HomePage() {
   const [news, setNews] = useState([]);
 
-  // const apiURL = "http://localhost:1337/api/update-sections?populate=*";
-
   const apiURL =
     "https://mindful-cabbage-f2676bb676.strapiapp.com/api/update-sections?populate=*";
 
@@ -19,9 +17,7 @@ export default function HomePage() {
       try {
         const response = await axios.get(apiURL);
         console.log(response.data);
-        // const result = await response.json();
         setNews(response.data.data);
-        // setNews(result);
       } catch (error) {
         console.error("Error while fetching data: ", error);
       }

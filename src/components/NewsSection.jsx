@@ -1,6 +1,5 @@
 import React from "react";
 import NewsSectionButton from "./NewsSectionButton";
-import NewsPageModal from "./NewsPageModal";
 import { useState } from "react";
 
 const NewsSection = ({

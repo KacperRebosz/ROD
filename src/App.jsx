@@ -10,16 +10,6 @@ import RentingPage from "./pages/Renting.jsx";
 import GalleryPage from "./pages/Gallery.jsx";
 import RootLayout from "./pages/Root.jsx";
 import ErrorPage from "./pages/Error.jsx";
-import ScrollToAnchor from "./modules/ScrollTohash.jsx";
-import PageFooter from "./components/Footer.jsx";
-import NewsPageModal from "./components/NewsPageModal.jsx";
-import { motion } from "framer-motion";
-// const routeDefinitions = createRoutesFromElements(
-//   <Route>
-//     <Route path="/" element={<HomePage />} />
-//     <Route path="/Contact" element={<ContactPage />} />
-//   </Route>
-// );
 
 const router = createBrowserRouter([
   {

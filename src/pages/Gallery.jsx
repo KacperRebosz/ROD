@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import GalleryEnrollment from "../components/GalleryEnrollment";
 import GallerySection from "../components/GallerySection";
-// import { SECTIONS } from "../data/gallery";
 import axios from "axios";
 import AnimatedPage from "../components/AnimatedPage";
 

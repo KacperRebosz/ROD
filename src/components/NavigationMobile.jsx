@@ -45,81 +45,21 @@ const ARRAY_PAGES = [
 ];
 
 export default function NavigationMobile({ isOpen }) {
-  // const li_item = {
-  //   open: {
-  //     transition: {
-  //       staggerChildren: 0.3,
-  //     },
-  //   },
-  //   closed: {
-  //     transition: {
-  //       staggerChildren: 0.15,
-  //       staggerDirection: -1,
-  //     },
-  //   },
-  // };
-  // const sidebar = {
-  //   open: {
-  //     transition: {
-  //       type: "spring",
-  //       stiffness: 20,
-  //     },
-  //   },
-  //   closed: {
-  //     transition: {
-  //       delay: 0.4,
-  //       type: "spring",
-  //       stiffness: 400,
-  //       damping: 40,
-  //     },
-  //   },
-  // };
-  // const itemVariants = {
-  //   open: {
-  //     y: 0,
-  //     opacity: 1,
-  //   },
-  //   closed: {
-  //     y: 50,
-  //     opacity: 0,
-  //   },
-  // };
-
   function handleSelect(selectedMenuButton) {
     setSelectedMenu(selectedMenuButton);
     console.log(selectedMenuButton);
   }
   if (isOpen === true) {
     return (
-      <motion.nav
-        className="fixed inset-0 m-auto bg-white overflow-auto"
-        // initial="hidden"
-        // animate="visible"
-        // variants={sidebar}
-        // onClick={(This)=>this.}
-      >
+      <motion.nav className="fixed inset-0 m-auto bg-white overflow-auto">
         <motion.div>
           <motion.div className="w-full ">
-            <motion.ul
-              // initial="hidden"
-              // animate="visible"
-              // variants={list_item}
-              // transition={{ duration: 0.5 }}
-              className="flex h-screen flex-col items-center justify-center gap-2 "
-            >
+            <motion.ul className="flex h-screen flex-col items-center justify-center gap-2 ">
               {ARRAY_PAGES.map((option) => (
-                <motion.li
-                  // initial="hidden"
-                  // animate="visible"
-                  // variants={li_item}
-                  // transition={{ duration: 0.5 }}
-                  className="text-2xl "
-                  key={option.label}
-                >
+                <motion.li className="text-2xl " key={option.label}>
                   <NavLink
                     to={option.href}
                     className={({ isActive }) => (isActive ? "" : undefined)}
-                    // variants={itemVariants}
                     onClick={() => {
                       handleSelect(option.label);
                     }}

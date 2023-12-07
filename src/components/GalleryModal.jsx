@@ -13,9 +13,7 @@ export default function GalleryModal({
         setActiveModal(null);
       }
     };
-    // Add event listener when the component mounts
     document.addEventListener("keydown", handleKeyDown);
-    // Remove event listener when the component unmounts
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
