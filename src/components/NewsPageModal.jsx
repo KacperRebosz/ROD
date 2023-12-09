@@ -33,7 +33,7 @@ export default function NewsPageModal({
               </h2>
               <img
                 src="/close40.svg"
-                className="absolute right-0 top-0"
+                className="absolute right-0 top-0 cursor-pointer"
                 onClick={() => setActivePopup(false)}
               />
               <p className="pl-1 pt-3 pb-8 sm:px-3 sm:pb-12 text-sm lg:px-5 xl:px-7 xl:pt-8 3xl:pl-8 3xl:pr-8 3xl:mt-4 3xl:pb-8">
