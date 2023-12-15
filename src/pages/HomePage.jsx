@@ -5,8 +5,14 @@ import moment from "moment/min/moment-with-locales";
 import PageFooter from "../components/Footer";
 import { NavLink } from "react-router-dom";
 import AnimatedPage from "../components/AnimatedPage";
+import { TEST_UPDATE_DATA } from "../data/TestDataUpdateSection";
+import { TEST_GALLERY_DATA } from "../data/TestDataEachGallerySection";
 
 export default function HomePage() {
+  let news = TEST_UPDATE_DATA.data;
+
+  // UNCOMMENT WHEN ACTUAL API WILL BE USED
+  /*
   const [news, setNews] = useState([]);
 
   const apiURL =
@@ -25,6 +31,7 @@ export default function HomePage() {
 
     fetchData();
   }, []);
+*/
 
   function compareDates(a, b) {
     const dateA = new Date(a.attributes.date);
@@ -61,6 +68,11 @@ export default function HomePage() {
 
     return finalDate;
   }
+  //only for test data
+  function getRandomImage() {
+    const randomImageNumber = Math.floor(Math.random() * 7) + 1;
+    return `/Images/image${randomImageNumber}.jpg`;
+  }
 
   return (
     <>
@@ -81,14 +93,15 @@ export default function HomePage() {
                 shortDescription={makeShortDescription(
                   news.attributes.description
                 )}
-                smallphoto={
-                  "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
-                  news.attributes.cover.data.attributes.formats.thumbnail.url
-                }
-                photo={
-                  "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
-                  news.attributes.cover.data.attributes.formats.small.url
-                }
+                // smallphoto={
+                //   "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
+                //   news.attributes.cover.data.attributes.formats.thumbnail.url
+                // }
+                // photo={
+                //   "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
+                //   news.attributes.cover.data.attributes.formats.small.url
+                // }
+                photo={getRandomImage()}
               />
             ))}
           </div>

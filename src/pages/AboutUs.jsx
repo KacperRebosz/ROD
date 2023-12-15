@@ -4,8 +4,13 @@ import NewsSection from "../components/NewsSection";
 import moment from "moment/min/moment-with-locales";
 import PageFooter from "../components/Footer";
 import AnimatedPage from "../components/AnimatedPage";
+import { TEST_UPDATE_DATA } from "../data/TestDataUpdateSection";
 
 export default function AboutUsPage() {
+  let news = TEST_UPDATE_DATA.data;
+
+  // UNCOMMENT WHEN ACTUAL API WILL BE USED
+  /*
   const [news, setNews] = useState([]);
 
   const apiURL =
@@ -24,6 +29,8 @@ export default function AboutUsPage() {
 
     fetchData();
   }, []);
+
+*/
 
   function compareDates(a, b) {
     const dateA = new Date(a.attributes.date);
@@ -55,6 +62,12 @@ export default function AboutUsPage() {
     }
   }
 
+  //only for test data
+  function getRandomImage() {
+    const randomImageNumber = Math.floor(Math.random() * 7) + 1;
+    return `/Images/image${randomImageNumber}.jpg`;
+  }
+
   return (
     <>
       <AnimatedPage>
@@ -72,14 +85,15 @@ export default function AboutUsPage() {
                 shortDescription={makeShortDescription(
                   news.attributes.description
                 )}
-                smallphoto={
-                  "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
-                  news.attributes.cover.data.attributes.formats.thumbnail.url
-                }
-                photo={
-                  "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
-                  news.attributes.cover.data.attributes.formats.small.url
-                }
+                // smallphoto={
+                //   "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
+                //   news.attributes.cover.data.attributes.formats.thumbnail.url
+                // }
+                // photo={
+                //   "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
+                //   news.attributes.cover.data.attributes.formats.small.url
+                // }
+                photo={getRandomImage()}
               />
             ))}
           </div>

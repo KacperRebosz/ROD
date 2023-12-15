@@ -21,7 +21,7 @@ export default function NewsSectionButton({
         id={id}
         onClick={handleDivClick}
       >
-        READ MORE
+        pokaż więcej...
         <NewsPageModal
           newsContent={newsContent}
           activePopup={activePopup}

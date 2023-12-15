@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import GallerySection from "../components/GallerySection";
 import axios from "axios";
 import AnimatedPage from "../components/AnimatedPage";
+import { TEST_GALLERY_DATA } from "../data/TestDataEachGallerySection";
 
 export default function GalleryPage() {
+  let sections = TEST_GALLERY_DATA.data;
+
+  // UNCOMMENT WHEN ACTUAL API WILL BE USED
+  /*
   const [sections, setSections] = useState([]);
 
   const apiURL =
@@ -22,6 +27,13 @@ export default function GalleryPage() {
 
     fetchData();
   }, []);
+  */
+
+  //only for test data
+  function getRandomImage() {
+    const randomImageNumber = Math.floor(Math.random() * 7) + 1;
+    return `/Images/image${randomImageNumber}.jpg`;
+  }
 
   const sortedSectionsArray = sections.sort((a, b) => b.id - a.id);
   console.log(sortedSectionsArray);
@@ -37,10 +49,11 @@ export default function GalleryPage() {
             key={section.id}
             title={section.attributes.Title}
             description={section.attributes.Description}
-            images={section.attributes.Images.data.map(
-              (image) =>
-                "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
-                image.attributes.url
+            images={section.attributes.Images.data.map((image) =>
+              // "https://mindful-cabbage-f2676bb676.media.strapiapp.com/" +
+              // image.attributes.url
+
+              getRandomImage()
             )}
           />
         ))}
